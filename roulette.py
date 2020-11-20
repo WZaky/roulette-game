@@ -53,16 +53,16 @@ while continue_play :
         print("Sorry, you'll maybe have more luck next time !")
         money -= bet_money
     
-    #continuing playing or not 
+    #continue playing or not 
     if money <= 0 :
         print("Sorry you don't have any money, see you next time")
         continue_play = False   
     else :
         print("You have ", money,"$")
         quit = input("Do you want to exist the casino (y/n) ? ")
-        if quit == "y" or quit == "Y" :
+        if quit.lower() == "y" :
             print("Ok not problem, see you next time")
             continue_play = False
-        elif quit == "n" or quit =="N" : 
+        elif quit.lower() == "n" :
             print("That's what we want to hear, Let's go again !!!")
     
