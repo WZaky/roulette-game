@@ -58,11 +58,18 @@ while continue_play :
         print("Sorry you don't have any money, see you next time")
         continue_play = False   
     else :
-        print("You have ", money,"$")
-        quit = input("Do you want to exist the casino (y/n) ? ")
-        if quit.lower() == "y" :
-            print("Ok not problem, see you next time")
-            continue_play = False
-        elif quit.lower() == "n" :
-            print("That's what we want to hear, Let's go again !!!")
-    
+        question = True
+        while question :
+            print("You have ", money,"$")
+            quit = input("Do you want to exist the casino (y/n) ? ")
+            if quit.lower() == "y" :
+                print("Ok not problem, see you next time")
+                continue_play = False
+                question = False
+            elif quit.lower() == "n" :
+                print("That's what we want to hear, Let's go again !!!")
+                question = False
+            else :
+                print("Sorry we didn't get that, come again ")
+                question = True
+                
