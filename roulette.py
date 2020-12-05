@@ -4,8 +4,8 @@ from math import ceil
 money = 1000
 continue_play = True
 
-print("Hello and welcome, you have ", money,"$. Let's start !")
-    
+print(f"Hello and welcome, you have {money}$. Let's start !")
+#Here did a small modif, used f method    
 while continue_play :
     # Choosing the number you want to bet on 
     bet_choice = -1
@@ -35,7 +35,7 @@ while continue_play :
         if bet_money < 0 :
             print("Sorry but you can't bet less than 1$, try again :")
         if bet_money > money :
-            print("Sorry but you don't have enough money to place a bet this high, you only have", money,"$")
+            print(f"Sorry but you don't have enough money to place a bet this high, you only have {money}$")
     
     # Sorting winning number         
     winning_number = randrange(50)        
