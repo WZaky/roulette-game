@@ -3,8 +3,18 @@ from math import ceil
 
 money = 1000
 continue_play = True
+name = -1 
 
-print(f"Hello and welcome, you have {money}$. Let's start !")
+while name == -1:
+    name = input("What's your name ?")
+    try :
+        name = str(name)
+    except TypeError :
+        print("Sorry but this name isn't acceptable, try with a another name :")
+        name = -1
+        continue
+    
+print(f"Hello and welcome {name}, you have {money}$. Let's start !")
 #Here did a small modif, used f method    
 while continue_play :
     # Choosing the number you want to bet on 
@@ -61,7 +71,7 @@ while continue_play :
         question = True
         while question :
             print("You have ", money,"$")
-            quit = input("Do you want to exist the casino (y/n) ? ")
+            quit = input(f"{name}, do you want to exist the casino (y/n) ?")
             if quit.lower() == "y" :
                 print("Ok not problem, see you next time")
                 continue_play = False
